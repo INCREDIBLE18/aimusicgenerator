@@ -1,0 +1,25 @@
+# Training & model hyperparameters
+data:
+  processed_dir: outputs/processed
+  sequence_length: 100
+  val_split: 0.1
+  test_split: 0.0
+
+train:
+  epochs: 50
+  batch_size: 64
+  learning_rate: 0.001
+
+model:
+  embedding_dim: 256
+  rnn_units: 512
+  transformer:
+    num_layers: 4
+    d_model: 256
+    num_heads: 4
+    dff: 512
+    dropout: 0.1
+
+generate:
+  length: 200
+  temperature: 1.0

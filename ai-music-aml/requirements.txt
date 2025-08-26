@@ -1,0 +1,10 @@
+tensorflow>=2.12
+numpy
+pandas
+tqdm
+music21
+pretty_midi
+matplotlib
+streamlit
+pyyaml
+scikit-learn
