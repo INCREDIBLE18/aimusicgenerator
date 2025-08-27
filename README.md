@@ -56,7 +56,7 @@ python -m src.train_gan --config config.yaml
 python -m src.fine_tune_rl --config config.yaml
 ```
 
-8) **Generate MIDI** (choose model type: `rnn` or `transformer`):
+8) **Generate MIDI** (choose model type: `rnn` or `transformer`):>
 ```bash
 python -m src.generate --model_type rnn --checkpoint outputs/rnn/best.keras --out outputs/generated_rnn.mid
 python -m src.generate --model_type transformer --checkpoint outputs/transformer/best.keras --out outputs/generated_transformer.mid
