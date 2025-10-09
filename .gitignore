@@ -1,3 +1,133 @@
+# Virtual Environments
 .venv/
 venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# AI/ML Specific
+# Model files (optional - uncomment if you don't want to track models)
+# *.h5
+# *.hdf5
+# *.pkl
+# *.pickle
+# *.joblib
+# *.keras
+# *.pb
+# *.pt
+# *.pth
+# *.onnx
+
+# Data files (large datasets)
+# *.csv
+# *.json
+# *.xml
+# *.h5
+# *.hdf5
+
+# Generated files
+outputs/generated*.mid
+outputs/temp/
+temp/
+tmp/
+
+# Logs
+*.log
+logs/
+wandb/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows specific
+*.tmp
+*.temp
+~$*
+
+# Audio files (optional - uncomment if you want to exclude)
+# *.wav
+# *.mp3
+# *.flac
+# *.aac
+
+# Backup files
+*.bak
+*.backup
+*.old

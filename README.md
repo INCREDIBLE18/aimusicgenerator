@@ -22,7 +22,49 @@ Visualization + Streamlit UI (Play, Download)
 
 > Note: The GAN and RL components are provided as **working skeletons** to keep the repo concise. You can train the RNN/Transformer end-to-end out of the box, then optionally explore adversarial refinement and policy-gradients.
 
-## 📦 Quickstart
+## � Quick Start
+
+### Option 1: Modern Web UI (Recommended) ✨
+
+The easiest way to use the AI Music Composer is through our beautiful web interface:
+
+**Windows:**
+```bash
+# Double-click the launcher or run:
+launch_studio.bat
+```
+
+**Cross-platform:**
+```bash
+python launch_studio.py
+```
+
+**Manual launch:**
+```bash
+cd ai-music-aml
+streamlit run src/ui/modern_app.py
+```
+
+Then open http://localhost:8501 in your browser for a complete visual interface!
+
+### Option 2: Command Line Interface 🖥️
+
+For advanced users, use our CLI tool:
+
+```bash
+# Quick start (complete workflow)
+python music_cli.py quickstart
+
+# Individual commands
+python music_cli.py status
+python music_cli.py preprocess
+python music_cli.py train --model rnn
+python music_cli.py generate --model rnn --length 200
+```
+
+### Option 3: Manual Setup 🔧
+
+## �📦 Manual Quickstart
 
 1) **Install deps** (Python 3.10+ recommended):
 ```bash
@@ -33,7 +75,11 @@ pip install -r requirements.txt
 
 3) **Preprocess**:
 ```bash
-python -m src.data.preprocess --midi_dir midi_songs --out_dir outputs --min_notes 200
+# Using the config file (recommended)
+python -m src.run_preprocess --config config.yaml --min_notes 200
+
+# Or directly specifying paths
+python -m src.data.preprocess --midi_dir d:\Music_Generator_Aiml\midi_songs --out_dir outputs --min_notes 200
 ```
 
 4) **Train RNN baseline**:
@@ -70,7 +116,7 @@ streamlit run src/ui/app.py
 ### 📁 Repo Layout
 ```
 ai-music-aml/
-├─ midi_songs/                 # put your .mid files here
+├─ midi_songs/                 # MIDI files located at d:\Music_Generator_Aiml\midi_songs
 ├─ outputs/                    # checkpoints + processed data + generated MIDI
 ├─ src/
 │  ├─ data/

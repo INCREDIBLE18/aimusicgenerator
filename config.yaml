@@ -1,0 +1,22 @@
+data:
+  midi_dir: d:/Music_Generator_Aiml/midi_songs
+  processed_dir: outputs/processed
+  sequence_length: 64
+  test_split: 0.0
+  val_split: 0.1
+generate:
+  length: 200
+  temperature: 1.0
+model:
+  embedding_dim: 128
+  rnn_units: 256
+  transformer:
+    d_model: 128
+    dff: 256
+    dropout: 0.1
+    num_heads: 2
+    num_layers: 2
+train:
+  batch_size: 128
+  epochs: 10
+  learning_rate: 0.001
