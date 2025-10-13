@@ -1,3 +1,5 @@
+# AI Music Generator Project - .gitignore
+
 # Virtual Environments
 .venv/
 venv/
@@ -33,15 +35,25 @@ MANIFEST
 *.manifest
 *.spec
 
-# IDE
+# IDE Files
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+.spyderproject
+.spyproject
 
 # Jupyter Notebook
 .ipynb_checkpoints
+*.ipynb
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # pyenv
 .python-version
@@ -56,18 +68,6 @@ __pypackages__/
 celerybeat-schedule
 celerybeat.pid
 
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
 # mypy
 .mypy_cache/
 .dmypy.json
@@ -76,36 +76,69 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# AI/ML Specific
-# Model files (optional - uncomment if you don't want to track models)
-# *.h5
-# *.hdf5
-# *.pkl
-# *.pickle
-# *.joblib
-# *.keras
-# *.pb
-# *.pt
-# *.pth
-# *.onnx
+# AI/ML Specific Files
+# Trained Models (keep best.keras, exclude temp models)
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+*.pb
+*.pt
+*.pth
+*.onnx
+*temp*.keras
+*backup*.keras
+model_*.keras
+checkpoint_*.keras
+
+# Keep essential model files
+!ai-music-aml/outputs/rnn/best.keras
+!ai-music-aml/outputs/processed/vocab.json
+!ai-music-aml/outputs/processed/itos.pkl
 
 # Data files (large datasets)
-# *.csv
-# *.json
-# *.xml
-# *.h5
-# *.hdf5
+*.csv
+*.json
+*.xml
+!ai-music-aml/outputs/processed/vocab.json  # Keep vocabulary
+!config.yaml                                 # Keep config
+!ai-music-aml/config.yaml                   # Keep config
 
-# Generated files
-outputs/generated*.mid
+# Generated Output Files
+outputs/*.mid
+outputs/generated*
 outputs/temp/
+outputs/test*
+outputs/experimental*
+outputs/backup*
 temp/
 tmp/
+cache/
 
-# Logs
-*.log
+# Keep sample outputs for documentation
+!outputs/README.md
+
+# TensorFlow/Keras logs and checkpoints
 logs/
 wandb/
+*.log
+tensorboard_logs/
+checkpoints/
+saved_models/
+
+# Audio Processing temporary files
+*.wav
+*.mp3
+*.flac
+*.aac
+*.ogg
+*.wma
+
+# Keep MIDI source files but exclude generated ones
+!midi_songs/
+midi_songs/generated*
+midi_songs/temp*
 
 # OS generated files
 .DS_Store
@@ -120,14 +153,36 @@ Thumbs.db
 *.tmp
 *.temp
 ~$*
+desktop.ini
 
-# Audio files (optional - uncomment if you want to exclude)
-# *.wav
-# *.mp3
-# *.flac
-# *.aac
-
-# Backup files
+# Backup and old files
 *.bak
 *.backup
 *.old
+*_backup*
+*_old*
+*.orig
+
+# Documentation temp files
+*.pdf~
+*.docx~
+
+# Streamlit cache
+.streamlit/
+
+# GPU/CUDA cache
+.nv/
+
+# Node modules (if any JS dependencies)
+node_modules/
+
+# Large binary files
+*.bin
+*.dat
+*.dump
+
+# Testing files
+test_outputs/
+*_test.mid
+test_*.mid
+debug_*.mid

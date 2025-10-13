@@ -1,7 +1,12 @@
 import argparse
 import os
+import sys
 import yaml
-from src.data.preprocess import run
+
+# Add current directory to path so we can import from src
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from data.preprocess import run
 
 def main(config_path, min_notes=100):
     """Run preprocessing using paths from the config file"""
