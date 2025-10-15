@@ -48,6 +48,9 @@ MANIFEST
 .ipynb_checkpoints
 *.ipynb
 
+# PDF files
+*.pdf
+
 # Environment Variables
 .env
 .env.local
