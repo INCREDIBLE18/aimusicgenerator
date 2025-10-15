@@ -119,6 +119,44 @@ cache/
 # Keep sample outputs for documentation
 !outputs/README.md
 
+# Large sample/template files and directories
+free-midi-chords-*/
+sample_*
+template_*
+*.zip
+*.rar
+*.tar.gz
+
+# Documentation and reporting files
+*_REPORT.md
+*_GUIDE.md
+COMPLETE_*.md
+FINAL_*.md
+PROJECT_*.md
+PATH_*.md
+BUG_*.md
+SAMPLE_*.md
+SETUP_*.md
+UI_*.md
+*.pdf
+
+# Keep essential status files
+!SYSTEM_STATUS.md
+
+# Batch files and scripts (keep essential ones)
+Launch_*.bat
+launch_*.bat
+check_*.py
+test_*.py
+setup_*.py
+generate_*.py
+
+# Keep essential files
+!enhanced_*.py
+!demo_*.py
+!studio_*.py
+!test_step_by_step.py
+
 # TensorFlow/Keras logs and checkpoints
 logs/
 wandb/
