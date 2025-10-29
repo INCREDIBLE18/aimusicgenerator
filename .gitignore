@@ -80,7 +80,6 @@ dmypy.json
 .pyre/
 
 # AI/ML Specific Files
-# Trained Models (keep best.keras, exclude temp models)
 *.h5
 *.hdf5
 *.pkl
@@ -159,6 +158,13 @@ generate_*.py
 !demo_*.py
 !studio_*.py
 !test_step_by_step.py
+!music_generation_ui.py
+!chord_generator_v2.py
+!note_generator.py
+!advanced_music_gen.py
+!enhanced_chord_generator.py
+!enhanced_note_generator.py
+!train_wrapper.py
 
 # TensorFlow/Keras logs and checkpoints
 logs/

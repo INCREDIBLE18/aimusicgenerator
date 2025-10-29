@@ -401,13 +401,9 @@ def chord_progression_builder():
         st.write("**Your Chord Progression:**")
         chord_sequence = " → ".join(all_selected)
         st.markdown(f"🎵 **{chord_sequence}**")
-        
-        # Generate from chords button
-        if st.button("🎼 Generate Music from These Chords", type="primary"):
-            return all_selected
     
     st.markdown('</div>', unsafe_allow_html=True)
-    return None
+    return all_selected if all_selected else None
 
 def note_sequence_builder():
     """Interactive note sequence builder"""
@@ -446,9 +442,6 @@ def note_sequence_builder():
                 st.write("**Your Melody:**")
                 melody_sequence = " → ".join(selected_notes)
                 st.markdown(f"🎵 **{melody_sequence}**")
-                
-                if st.button("🎹 Generate Music from These Notes", type="primary"):
-                    return selected_notes
     
     else:  # Scale Generation
         col1, col2 = st.columns(2)
@@ -483,11 +476,8 @@ def note_sequence_builder():
             st.write("**Generated Scale:**")
             scale_sequence = " → ".join(scale_notes)
             st.markdown(f"🎵 **{scale_sequence}**")
-            
-            if st.button("🎼 Generate Music from This Scale", type="primary"):
-                return scale_notes
     
-    return None
+    return scale_notes if 'scale_notes' in locals() else (selected_notes if 'selected_notes' in locals() and selected_notes else None)
 
 def display_terminal_output(output_text):
     """Display terminal-style output"""
@@ -554,6 +544,13 @@ def run_generation_with_tracking(generation_type, **kwargs):
         elif generation_type == "notes":
             # Call note generation
             result = {"success": True, "message": "Note generation simulated"}
+        elif generation_type == "style":
+            # Call style-based generation (uses same AI model but with style-specific parameters)
+            result = generate_music_ui(
+                length=kwargs.get('length', 100),
+                temperature=kwargs.get('temperature', 0.8),
+                output_file=kwargs.get('output_file', 'generated.mid')
+            )
         else:
             result = {"success": False, "error": "Unknown generation type"}
         
@@ -845,7 +842,7 @@ def main():
     st.divider()
     st.markdown("""
     <div style="text-align: center; color: #666; padding: 1rem;">
-        🎵 AI Music Composer Studio Pro | Powered by Deep Learning | Create • Compose • Inspire 🎵
+        🎵 AI Music Composer Studio Pro | Powered by Advanced Machine Learning | Create • Compose • Inspire 🎵
     </div>
     """, unsafe_allow_html=True)
 

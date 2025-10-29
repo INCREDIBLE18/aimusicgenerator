@@ -2,7 +2,7 @@
 
 
 
-A deep learning project that generates music using advanced neural networks including LSTM, Transformer, and GAN models.This project implements the full pipeline you requested:
+An advanced machine learning project that generates music using sophisticated neural networks including LSTM, Transformer, and GAN models.This project implements the full pipeline you requested:
 
 
 
