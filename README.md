@@ -1,22 +1,24 @@
-# 🎵 AI Music Generator# 🎶 AI Music Composer (Advanced ML) – RNN + Transformer + GAN (+RL)
+# 🎵 AI Music Generator
+
+An advanced machine learning-based music generation system with an interactive Streamlit UI. Generate music using various approaches including note sequences, chord progressions, and style-based generation.
 
 
 
-An advanced machine learning project that generates music using sophisticated neural networks including LSTM, Transformer, and GAN models.This project implements the full pipeline you requested:
+## 🌟 Features
 
+### Generation Modes
+- **Basic Generation**: Random music using trained models
+- **Note-Based**: Generate from seed notes (e.g., "C4 E4 G4")
+- **Chord-Based**: Use chord progressions (e.g., "Cmaj7 Am7 Dm7 G7")
+- **Style-Based**: Choose from various styles (Jazz, Classical, Pop, etc.)
 
-
-## Features```
-
-Dataset (MIDI files)
-
-- **Multiple Generation Modes**: Random, note-based, chord progression, and style-based generation       ⬇
-
-- **Web Interface**: Streamlit-based professional UIPreprocessing (Pitch, Step, Duration → Tokens)
-
-- **Command Line Tools**: Multiple generators for different use cases       ⬇
-
-- **Advanced ML Models**: LSTM, Transformer, and GAN architecturesBaseline Model (RNN/LSTM) → Generates simple melody
+### Technical Features
+- 🎨 Interactive Streamlit Web UI
+- 🧠 Advanced ML Models (RNN/Transformer)
+- 🎼 Real-time Music Preview
+- 💾 MIDI File Export
+- 🎛️ Adjustable Creativity & Length
+- 📊 Model Evaluation Tools
 
        ⬇
 
